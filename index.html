@@ -1,210 +1,212 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
 
-	<head>
-		<meta charset="utf-8">
+    <title>The Router Expanded: Let's get modular</title>
 
-		<title>Try Paspberry Pi</title>
+    <meta
+      name="description"
+      content="A framework for easily creating beautiful presentations using HTML"
+    />
+    <meta name="author" content="Hakim El Hattab" />
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.min.css" />
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme" />
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write(
+        '<link rel="stylesheet" href="css/print/' +
+          (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') +
+          '.css" type="text/css" media="print">'
+      );
+    </script>
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>The Router Expanded:</h1>
+          <h3>Let's Get Modular</h3>
+          <p>
+            <small
+              >Created by
+                > Ndimphiwe Mayekiso & Siphathisiwe Hlakaza</small
+            >
+          </p>
+        </section>
 
-	<body>
+        <section>
+          <h2>Contents</h2>
+          <ul>
+            <li class="fragment">What is the Router?</li>
+            <li class="fragment">What does this give us?</li>
+            <li class="fragment">What are the side effects?</li>
+          </ul>
+        </section>
 
-		<div class="reveal">
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              What is the Router?
+            </script>
+          </section>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+          <section data-markdown>
+            <script type="text/template">
+              ### More than just a navigator?
+              ![logo](images/navigation.jpg)
+            </script>
+          </section>
 
+          <section data-markdown>
+            <script type="text/template">
+               ### Navigation
+               * **Application State:** isAuth, !isAuth
+               * **Browser State:** URL, Route Params, QueryParams.
+               * **Layered or Multiple Routing Strategies:** Parent Routes with child routes, Multiple Routing Outlets that route independently and affect the application state in various ways.
+            </script>
+          </section>
+        </section>
 
-				<section>
-					<h1>Try Router First</h1>
-					<p>
-						<small>Created by <a href="mailto:ferreira.rcb@gmail.com" mailto>Rui Ferreira</a></small>
-					</p>
-				</section>
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              # What does this give us?
+            </script>
+          </section>
 
-
-                                <section>
-                                <h2>Contents</h2>
-                                <ul>
-                                       <li class="fragment">What is the problem?</li>
-                                       <li class="fragment">How can I fix it?</li>
-                                       <li class="fragment">Where am I going?</li>
-                                </ul>
-                                </section>
-
-
-                                <section>
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                          # What is the problem?
-                                       </script>
-                                       </section>
-
-                                       <section data-markdown>
-                                          <script type="text/template">
-                                             ### The Kitchen Sink
-                                             ![logo](images/kitchen-sink.jpg)
-                                          </script>
-                                       </section>
-
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                       <blockquote> 
-                                          Developers have every intension of following best practices, like 80/20 rules, etc. But for some reason at the end of the project "POC" the code always looks like a kitchen sink.
-                                       </blockquote>
-                                          * sad devloper
-                                       </script>
-                                       </section>
-
-                                       <section data-markdown>
-                                          <script type="text/template">
-                                             ### Complicated state management 
-                                             ![logo](images/project.png)
-                                          </script>
-                                       </section>
-                                </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### So many options
+              ![mockup](images/router-depths.jpg)
+            </script>
+          </section>
 
 
-                                <section>
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                          # How can I fix it?
-                                       </script>
-                                       </section>
+          <section data-markdown>
+            <script type="text/template">
+               * **Route Guards** 
+               * **Retrieving data from routes based on their configuration**
+               * **Resolving before the route is loaded if logic needs to be completed prior to hitting the route**
+               * **Different route matching strategies.**
+               * **Eaiser to understand project structures**
+            </script>
 
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                          ### Router first
-                                          ![mockup](images/sitemap-example.png)
-                                       </script>
-                                       </section>
+          </section>
+        </section>
 
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                          ### Home 
-                                          * **Logic:** getPath(), getPathData() 
-                                          * **State:** isAuth, !isAuth 
-                                          * **Content:** Title, Body, SEO (description, tags, links)
-                                       </script>
-                                       </section>
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              # What are the side effects?
+            </script>
+          </section>
 
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                          ### Parent
-                                          * Consumes route data (Config data, API end points)
-                                          * Router should dictate how content gets rendered
-                                       </script>
-                                       </section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Let's think modular!
+              * If think router first, you'll inevitably think modular.
+              * Your application is not just a bunch of pages and components. Think features and modules.
+            </script>
+          </section>
 
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                          ### Child
-                                          * Parent parses route data down to child
-                                          * Lazy load as needed to safe on bandwith
-                                       </script>
-                                       </section>
-                                </section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Pros
+              * I'm lazy, I'll load this feature when I need it.
+            </script>
+          </section>
+        </section>
 
-                                <section>
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                          # Where am I going?
-                                       </script>
-                                       </section>
+        <section data-markdown>
+          <script type="text/template">
+            # Q & A
+          </script>
+        </section>
+      </div>
+    </div>
 
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                          ## Interesting Concepts
-                                          * Router should dictate how each section in the view is rendered.
-                                          * State mangement can be handled through routes
-                                          * Router can be disabled without affecting the rest of project (blue, green deployment)
-                                          * Router dictates primary, secondary links (not hardcoded!!!)
-                                          * Router should cator for a single page application to a project with 100s pages.
-                                       </script>
-                                       </section>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
 
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                          ## Pros
-                                          * Free up devepers to focus on the functionality instead of state management.
-                                          * Make it easier to debug issues. (only one point of failure)
-                                          * Adding new features is a breeze.
-                                       </script>
-                                       </section>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-                                       <section data-markdown>
-                                       <script type="text/template">
-                                          ## Cons
-                                          * New concept for developers, hard to think moduler.
-                                          * Have to always make sure you add new functionality to the routes when implementing new features
-                                       </script>
-                                       </section>
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-                               </section>
-                         
-
-                               <section data-markdown>
-                               <script type="text/template">
-                                    # Q & A
-                               </script>
-			       </section>
-
-			</div>
-
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
-
-		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
-		</script>
-
-	</body>
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          {
+            src: 'lib/js/classList.js',
+            condition: function() {
+              return !document.body.classList;
+            }
+          },
+          {
+            src: 'plugin/markdown/showdown.js',
+            condition: function() {
+              return !!document.querySelector('[data-markdown]');
+            }
+          },
+          {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+              return !!document.querySelector('[data-markdown]');
+            }
+          },
+          {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            }
+          },
+          {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true,
+            condition: function() {
+              return !!document.body.classList;
+            }
+          },
+          {
+            src: 'plugin/notes/notes.js',
+            async: true,
+            condition: function() {
+              return !!document.body.classList;
+            }
+          }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+  </body>
 </html>
